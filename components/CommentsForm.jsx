@@ -81,7 +81,7 @@ const CommentsForm = ({ slug }) => {
   }
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
+    <div className="bg-white shadow-lg rounded-lg p-8 pb-20 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
       <div className=" grid grid-cols-1 gap-4 mb-4">
         <textarea 
