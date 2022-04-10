@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import { getCategories } from '../services'
 
+// href={`/category/${category.slug}`}
+
 const Categories = () => {
   const [categories, setCategories] = useState([])
 
@@ -16,7 +18,7 @@ const Categories = () => {
           Categories
         </h3>
         {categories.map((category) => (
-          <Link key={category.slug} href={`/category/${category.slug}`}>
+          <Link key={category.slug} href='/'>
             <span className='cursor-pointer block pb-3 mb-3  font-semibold transition hover:text-pink-600'>
                 {category.name}
             </span>
