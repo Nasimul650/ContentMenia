@@ -116,7 +116,104 @@ export const getSimilarPosts = async (categories, slug)=>{
   const result = await request(graphqlAPI, query, { slug, categories })
 
   return result.posts;
-}
+};
+export const getAdjacentPosts = async (createdAt, slug) => {
+  const query = gql`
+    query GetAdjacentPosts($createdAt: DateTime!,$slug:String!) {
+      next:posts(
+        first: 1
+        orderBy: createdAt_ASC
+        where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}}
+      ) {
+        title
+        featuredimage {
+          url
+        }
+        createdAt
+        slug
+      }
+      previous:posts(
+        first: 1
+        orderBy: createdAt_DESC
+        where: {slug_not: $slug, AND: {createdAt_lte: $createdAt}}
+      ) {
+        title
+        featuredimage {
+          url
+        }
+        createdAt
+        slug
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query, { slug, createdAt });
+
+  return { next: result.next[0], previous: result.previous[0] };
+};
+
+
+export const getCategoryPost = async (slug) => {
+  const query = gql`
+    query GetCategoryPost($slug: String!) {
+      postsConnection(where: {categories_some: {slug: $slug}}) {
+        edges {
+          cursor
+          node {
+            author10 {
+              description
+              name
+              id
+              photo {
+                url
+              }
+            }
+            createdAt
+            slug
+            title
+            excerpt
+            featuredimage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query, { slug });
+
+  return result.postsConnection.edges;
+};
+export const getFeaturedPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where: {featuredpost: true}) {
+        author10 {
+          name
+          photo {
+            url
+          }
+        }
+        featuredimage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }   
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.posts;
+};
+
 
 
 export const getCategories = async () =>{
@@ -134,26 +231,32 @@ export const getCategories = async () =>{
   return result.categories;
 }
 
-
-
-export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
-
-  return {
-    props: { posts }
-  }
-};
-
-
 export const submitComment = async (obj) => {
   const result = await fetch('/api/comments', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(obj),
-
-  })
+  });
 
   return result.json();
+};
+
+
+export const getComments = async (slug) =>{
+  const query = gql`
+  query GetComments($slug: String!) {
+    comments(where: { post: { slug: $slug }}){
+      name
+      createdAt
+      comment
+    }
+  }
+  `
+
+  const result = await request(graphqlAPI, query, {slug})
+
+  return result.comments;
 }
+
