@@ -41,12 +41,13 @@ export const getPosts = async () => {
 
 export const getCategories = async () => {
   const query = gql`
-    query GetGategories {
-        categories {
-          name
-          slug
-        }
+  query GetGategories  {
+    categories {
+      name
+      slug
     }
+  }
+  
   `;
 
   const result = await request(graphqlAPI, query);
