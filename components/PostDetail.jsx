@@ -46,13 +46,13 @@ const PostDetail = ({ post }) => {
   return (
     <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
        <div className='relative overflow-hidden shadow-md mb-6'>
-          <Image src={post.featuredimage.url} 
+          <img width={'100px'} height={'100px'} src={post.featuredimage.url} 
           alt={post.title} className='object-top rounded-t-lg h-full w-full'/>
        </div>
         <h1 className='mb-8 text-3xl font-semibold text-center' key={post}>{post.title}</h1>
        <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
           <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-            <Image src={post.author10.photo.url} alt={post.author10.name} height="30px" width="30px" className="align-middle rounded-full" />
+            <img src={post.author10.photo.url} alt={post.author10.name} height="30px" width="30px" className="align-middle rounded-full" />
             <p className="inline align-middle text-gray-700 ml-2 text-lg">{post.author10.name}</p>
           </div>
           <div className="font-medium text-gray-700">
