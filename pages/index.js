@@ -38,7 +38,7 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getServerSideProps(){
+export async function getStaticProps(){
   const posts = (await getPosts())  || [];
 
   return {
