@@ -88,13 +88,13 @@ const Privacy = () => {
         <p>
           ContentMenia follows a standard procedure of using log files. These
           files log visitors when they visit websites. All hosting companies do
-          this and are a part of hosting services' analytics. The information
+          this and are a part of hosting services analytics. The information
           collected by log files includes internet protocol (IP) addresses,
           browser type, Internet Service Provider (ISP), date and time stamp,
           referring/exit pages, and possibly the number of clicks. These are not
           linked to any information that is personally identifiable. The purpose
           of the information is for analyzing trends, administering the site,
-          tracking users' movement on the website, and gathering demographic
+          tracking users movement on the website, and gathering demographic
           information.
         </p>
         <h2>
@@ -107,7 +107,7 @@ const Privacy = () => {
           right to:
         </p>
         <p>
-          Request that a business that collects a consumer's personal data
+          Request that a business that collects a consumerd personal data
           disclose the categories and specific pieces of personal data that a
           business has collected about consumers.
         </p>
@@ -116,8 +116,8 @@ const Privacy = () => {
           that a business has collected.
         </p>
         <p>
-          Request that a business that sells a consumer's personal data, not
-          sell the consumer's personal data.
+          Request that a business that sells a consumers personal data, not
+          sell the consumers personal data.
         </p>
         <p>If you make a request, we have 30 Days to respond to you.</p>
         <p>
@@ -165,7 +165,7 @@ const Privacy = () => {
           <a href="https://education-myweb.vercel.app/contact">Contact Us</a>.
         </p>
         <h2>
-          <strong>Children's Information</strong>
+          <strong>Childrens Information</strong>
         </h2>
         <p>
           Another part of our priority is adding protection for children while

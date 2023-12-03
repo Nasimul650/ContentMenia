@@ -6,16 +6,16 @@ const contact = () => {
       <h1 className="mb-8 text-3xl font-semibold text-center">
         Contact Us
       </h1>
-<div class="container">
+<div className="container">
         <h1>Contact Us - ContentMenia</h1>
         <p>If you have any questions, comments, or concerns related to ContentMenia, we are here to help. Our customer support team is available to assist you through multiple channels, so you can choose the one that works best for you.</p>
 
-        <div class="row">
-            <div class="contact-medium">
-                <div class="contact-method">
-                    <i class="contact-method-icon fas fa-envelope"></i>
-                    <span class="contact-method-title">Email Support</span>
-                    <div class="contact-method-description">You can send us an email at <a href="mailto:mdsifat1024@gmail.com">mdsifat1024@gmail.com</a> and we’ll get back to you as soon as possible. Our team is available to answer your questions and provide assistance with any issues you may be experiencing on ContentMenia.</div>
+        <div className="row">
+            <div className="contact-medium">
+                <div className="contact-method">
+                    <i className="contact-method-icon fas fa-envelope"></i>
+                    <span className="contact-method-title">Email Support</span>
+                    <div className="contact-method-description">You can send us an email at <a href="mailto:mdsifat1024@gmail.com">mdsifat1024@gmail.com</a> and we’ll get back to you as soon as possible. Our team is available to answer your questions and provide assistance with any issues you may be experiencing on ContentMenia.</div>
                 </div>
             </div> <p>We value your feedback and are committed to providing you with the best possible service on ContentMenia. If you have any suggestions on how we can improve our website or services, please let us know. Our team is always looking for ways to enhance the customer experience on ContentMenia and we appreciate any feedback you can provide.</p>
 
